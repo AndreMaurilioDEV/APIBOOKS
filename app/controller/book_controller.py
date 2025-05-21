@@ -14,5 +14,13 @@ def get_books():
     books = Book.query.all()
     result = [book.to_dict() for book in books]
     return jsonify(result)
+
+
+def get_book(book_id):
+    book = Book.get_or_404(book_id)
+    return jsonify(book.to_dict)
+
+
+
     
     
