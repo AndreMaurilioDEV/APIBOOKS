@@ -8,3 +8,11 @@ def add_book():
     db.session.add(new_book)
     db.session.commit()
     return jsonify({"message": "Livro adicionado com sucesso!"}), 201
+
+
+def get_books():
+    books = Book.query.all()
+    result = [book.to_dict() for book in books]
+    return jsonify(result)
+    
+    
