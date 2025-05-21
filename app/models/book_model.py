@@ -12,8 +12,8 @@ class Book(db.Model):
 def to_dict(self):
     return {
         "id": self.id,
-        "title": self.author,
-        "author": self.genre,
+        "title": self.title,
+        "author": self.author,
         "year": self.year,
-        "genre": self.title
+        "genre": self.genre
     }
